@@ -4,6 +4,11 @@ import { useRouter } from 'next/navigation';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { registrationData } from '@/utils/mockData';
 
+const ADMIN_CREDENTIALS = {
+  email: 'admin@awb.com',
+  password: '@WB'
+};
+
 const LoginForm = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
@@ -21,6 +26,15 @@ const LoginForm = () => {
       // Simulate network delay for authentication
       await new Promise(resolve => setTimeout(resolve, 1000));
       
+      // Check for admin login
+      if (email.toLowerCase() === ADMIN_CREDENTIALS.email && 
+          password === ADMIN_CREDENTIALS.password) {
+        sessionStorage.setItem('userRole', 'admin');
+        router.push('/admin');
+        return;
+      }
+
+      // Regular user authentication
       const userIndex = registrationData["Form Responses 1"].findIndex(
         entry => entry["Email Address"].toLowerCase() === email.toLowerCase()
       );
@@ -43,8 +57,9 @@ const LoginForm = () => {
         return;
       }
 
-      // Store the user index in localStorage or sessionStorage
+      // Store the user info
       sessionStorage.setItem('userIndex', userIndex.toString());
+      sessionStorage.setItem('userRole', 'user');
       
       // Redirect to dashboard
       router.push('/dashboard');

@@ -24,8 +24,9 @@ export const registrationData = {
                 "Website SEO, Favicons & Social Media": "Completed",
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Completed",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Completed",
-                "Sales Online and Local": "Completed"
-            }
+                "Sales Online and Local": "Pending"
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:19:16",
@@ -52,9 +53,11 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
+            "amountPaid": 30000,
             "Timestamp": "12/17/2024 18:20:17",
             "Email Address": "maserekaronald1996@gmail.com",
             "Full Name": "Masereka Ronald",
@@ -79,7 +82,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:29:20",
@@ -106,7 +110,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:32:39",
@@ -133,7 +138,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:35:41",
@@ -160,7 +166,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:39:51",
@@ -187,7 +194,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:50:12",
@@ -214,7 +222,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:43:03",
@@ -241,7 +250,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:44:20",
@@ -268,7 +278,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:45:55",
@@ -295,7 +306,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:49:48",
@@ -322,7 +334,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 18:56:27",
@@ -349,7 +362,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:00:36",
@@ -376,7 +390,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:07:49",
@@ -403,7 +418,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:10:07",
@@ -430,7 +446,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:10:44",
@@ -457,7 +474,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:11:23",
@@ -484,7 +502,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:12:41",
@@ -511,7 +530,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:15:19",
@@ -538,7 +558,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:15:23",
@@ -565,7 +586,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:15:42",
@@ -592,7 +614,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:18:58",
@@ -619,7 +642,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:20:06",
@@ -646,7 +670,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:20:27",
@@ -673,7 +698,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:21:24",
@@ -700,7 +726,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:22:12",
@@ -727,7 +754,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:22:46",
@@ -754,7 +782,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:22:56",
@@ -781,7 +810,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:23:27",
@@ -808,7 +838,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:27:05",
@@ -835,7 +866,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:28:26",
@@ -862,7 +894,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:33:32",
@@ -889,7 +922,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:43:54",
@@ -916,7 +950,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:44:22",
@@ -943,7 +978,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:50:08",
@@ -970,7 +1006,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:51:03",
@@ -997,7 +1034,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:53:15",
@@ -1024,7 +1062,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:54:16",
@@ -1051,7 +1090,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:54:27",
@@ -1078,7 +1118,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 19:56:49",
@@ -1105,7 +1146,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 20:03:12",
@@ -1132,7 +1174,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 20:19:55",
@@ -1159,7 +1202,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 20:37:22",
@@ -1186,7 +1230,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 20:41:23",
@@ -1213,7 +1258,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 20:43:21",
@@ -1240,7 +1286,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 20:52:59",
@@ -1267,7 +1314,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 20:59:43",
@@ -1294,7 +1342,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 21:08:58",
@@ -1321,7 +1370,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 21:16:33",
@@ -1348,7 +1398,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 21:33:19",
@@ -1375,7 +1426,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 21:34:22",
@@ -1402,7 +1454,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 21:37:19",
@@ -1429,7 +1482,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 21:40:27",
@@ -1456,7 +1510,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 22:04:53",
@@ -1483,7 +1538,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 22:41:53",
@@ -1510,7 +1566,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 22:45:09",
@@ -1537,7 +1594,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/17/2024 23:06:20",
@@ -1564,7 +1622,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 6:38:50",
@@ -1591,7 +1650,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 7:39:49",
@@ -1618,7 +1678,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 9:06:28",
@@ -1645,7 +1706,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 9:10:01",
@@ -1672,7 +1734,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 9:19:30",
@@ -1699,7 +1762,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 9:41:40",
@@ -1726,7 +1790,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 9:43:26",
@@ -1753,7 +1818,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 9:44:20",
@@ -1780,7 +1846,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 9:45:41",
@@ -1807,7 +1874,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 9:54:45",
@@ -1834,7 +1902,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 10:12:01",
@@ -1861,7 +1930,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 10:22:46",
@@ -1888,7 +1958,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 11:25:02",
@@ -1915,7 +1986,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 11:40:00",
@@ -1942,7 +2014,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 11:42:06",
@@ -1969,7 +2042,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 11:46:22",
@@ -1996,7 +2070,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 11:57:15",
@@ -2023,7 +2098,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 13:21:37",
@@ -2050,7 +2126,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 13:22:05",
@@ -2077,7 +2154,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 13:35:20",
@@ -2104,7 +2182,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 13:50:13",
@@ -2131,7 +2210,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 13:50:48",
@@ -2158,7 +2238,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 13:55:23",
@@ -2185,7 +2266,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 13:56:49",
@@ -2212,7 +2294,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 14:15:47",
@@ -2239,7 +2322,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 14:18:37",
@@ -2266,7 +2350,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 14:23:13",
@@ -2293,7 +2378,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 14:37:54",
@@ -2320,7 +2406,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 14:41:15",
@@ -2347,7 +2434,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 14:52:34",
@@ -2374,7 +2462,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 15:08:08",
@@ -2401,7 +2490,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 15:53:47",
@@ -2428,7 +2518,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 16:16:22",
@@ -2455,7 +2546,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 16:16:59",
@@ -2482,7 +2574,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 16:47:28",
@@ -2509,7 +2602,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 17:53:43",
@@ -2536,7 +2630,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 18:02:09",
@@ -2563,7 +2658,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:07:16",
@@ -2590,7 +2686,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:09:35",
@@ -2617,7 +2714,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:11:57",
@@ -2644,7 +2742,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:13:59",
@@ -2671,7 +2770,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:16:17",
@@ -2698,7 +2798,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:17:49",
@@ -2725,7 +2826,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:20:58",
@@ -2752,7 +2854,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:22:43",
@@ -2779,7 +2882,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:25:36",
@@ -2806,7 +2910,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:29:05",
@@ -2833,7 +2938,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:29:38",
@@ -2860,7 +2966,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 19:49:02",
@@ -2887,7 +2994,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 20:11:59",
@@ -2914,7 +3022,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 20:20:01",
@@ -2941,7 +3050,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 20:47:14",
@@ -2968,7 +3078,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 20:49:06",
@@ -2995,7 +3106,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 20:50:55",
@@ -3022,7 +3134,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 20:51:55",
@@ -3049,7 +3162,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 21:18:44",
@@ -3076,7 +3190,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 21:40:19",
@@ -3103,7 +3218,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 22:54:09",
@@ -3130,7 +3246,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/18/2024 23:51:13",
@@ -3157,7 +3274,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/19/2024 5:28:15",
@@ -3184,7 +3302,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/19/2024 6:52:07",
@@ -3211,7 +3330,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/19/2024 8:33:18",
@@ -3238,7 +3358,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/19/2024 8:55:27",
@@ -3265,7 +3386,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/19/2024 17:24:31",
@@ -3292,7 +3414,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/19/2024 17:26:41",
@@ -3319,7 +3442,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/19/2024 17:28:04",
@@ -3346,7 +3470,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/19/2024 17:31:18",
@@ -3373,7 +3498,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/19/2024 17:31:00",
@@ -3400,7 +3526,8 @@ export const registrationData = {
                 "Learn to Teach: AWB Tutor Course (Compulsory)": "Pending",
                 "Become Freelance Ready (Sign Up to Attract Your First Clients \u00a3\u00a3\u00a3)": "Pending",
                 "Sales Online and Local": "Pending"
-            }
+            },
+            "amountPaid": 0,
         },
         {
             "Timestamp": "12/19/2024 17:32:16",
