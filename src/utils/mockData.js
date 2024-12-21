@@ -3194,7 +3194,7 @@ export const registrationData = {
             "amountPaid": 0,
         },
         {
-            "Timestamp": "12/18/2024 21:40:19",
+            "Registration date": "12/18/2024 21:40:19",
             "Email Address": "balindabellbrian5@gmail.com",
             "Full Name": "Balinda brian",
             "District of Residence": "Mityana",
