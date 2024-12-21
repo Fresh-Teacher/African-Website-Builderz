@@ -11,7 +11,7 @@ const Footer = () => {
           Coded with{' '}
           <span className="inline-block animate-heartbeat">❤️</span> by{' '}
           <a
-            href="https://freshteacher.com"
+            href="https://fresh-teacher.github.io"
             className="text-[#F4C2C2] font-bold hover:underline transition-all duration-300"
             target="_blank"
             rel="noopener noreferrer"
