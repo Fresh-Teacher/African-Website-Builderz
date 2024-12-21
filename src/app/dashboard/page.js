@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import { registrationData } from '@/utils/mockData';
+import { financialData } from '@/utils/financialData';
 import { Loader2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
@@ -103,10 +104,90 @@ const AnimatedProgress = ({ percentage }) => {
       </div>
     );
 };
+const FinancialProgress = ({ percentage = null, amountPaid = 0, totalAmount = 50000, lastPaymentDate = null }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  // Calculate percentage if not provided
+  const calculatedPercentage = percentage ?? ((amountPaid / totalAmount) * 100);
+  const displayPercentage = calculatedPercentage ? Math.min(100, calculatedPercentage) : 0;
+  const hasPaymentHistory = amountPaid > 0;
+
+  const getFinancialStatus = (percentage, hasHistory) => {
+    if (!hasHistory) return { text: 'No Payment Record', color: 'text-gray-600' };
+    if (percentage === 0) return { text: 'No Payment Made', color: 'text-red-600' };
+    if (percentage < 50) return { text: 'Initial Payment', color: 'text-orange-600' };
+    if (percentage < 100) return { text: 'Partially Paid', color: 'text-blue-600' };
+    return { text: 'Fully Paid', color: 'text-emerald-600' };
+  };
+
+  const getProgressBarColor = (percentage, hasHistory) => {
+    if (!hasHistory) return 'bg-gray-300';
+    if (percentage === 0) return 'bg-red-500';
+    if (percentage < 50) return 'bg-orange-500';
+    if (percentage < 100) return 'bg-blue-500';
+    return 'bg-emerald-500';
+  };
+
+  const status = getFinancialStatus(displayPercentage, hasPaymentHistory);
+
+  return (
+    <div className="space-y-2">
+      <div className="flex justify-between items-center">
+        <span className={`text-sm font-medium ${status.color}`}>
+          {status.text}
+        </span>
+        <div className="text-right">
+          <span className="text-sm font-medium text-gray-600 block">
+            {hasPaymentHistory ? `${displayPercentage.toFixed(1)}% paid` : 'No payments'}
+          </span>
+          {lastPaymentDate && (
+            <span className="text-xs text-gray-500">
+              Last Payment: {lastPaymentDate}
+            </span>
+          )}
+        </div>
+      </div>
+      <div ref={ref} className="relative h-4 bg-gray-100 rounded-full overflow-hidden">
+        <MotionDiv
+          initial={{ width: 0 }}
+          animate={inView ? { width: `${hasPaymentHistory ? displayPercentage : 100}%` } : { width: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className={`absolute top-0 left-0 h-full ${getProgressBarColor(displayPercentage, hasPaymentHistory)} rounded-full`}
+        />
+        <div className={`absolute top-0 left-0 w-full h-full bg-stripe ${!hasPaymentHistory ? 'opacity-5' : 'opacity-10'}`}></div>
+      </div>
+      <style jsx>{`
+        .bg-stripe {
+          background-image: linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.15) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.15) 50%,
+            rgba(255, 255, 255, 0.15) 75%,
+            transparent 75%,
+            transparent
+          );
+          background-size: 1rem 1rem;
+          animation: stripe-animation 1s linear infinite;
+        }
+        @keyframes stripe-animation {
+          from { background-position: 1rem 0; }
+          to { background-position: 0 0; }
+        }
+      `}</style>
+    </div>
+  );
+};
 
 export default function Dashboard() {
   const router = useRouter();
   const [userData, setUserData] = useState(null);
+  const [userFinancialData, setUserFinancialData] = useState(null);
+  const [paymentProgress, setPaymentProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [greeting, setGreeting] = useState('');
 
@@ -123,7 +204,18 @@ export default function Dashboard() {
       return;
     }
     
+    // Set user data
     setUserData(user);
+    
+    // Find financial data for this user
+    const financialRecord = financialData["Form Responses 1"].find(
+      record => record["Full Name"] === user["Full Name"]
+    ) || { amountPaid: 0, lastPaymentDate: 'N/A' };
+    
+    // Set financial data
+    setUserFinancialData(financialRecord);
+    setPaymentProgress(Math.round((financialRecord.amountPaid / 36696) * 100));
+    
     setGreeting(getTimeBasedGreeting());
     setIsLoading(false);
 
@@ -190,120 +282,156 @@ export default function Dashboard() {
             </button>
           </MotionDiv>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <AnimatedCard delay={0}>
-          <div className="flex flex-col">
-            <div className="flex items-center mb-4">
-              <div className="bg-blue-100 p-3 rounded-full">
-                <BarChartFill className="h-6 w-6 text-blue-600" />
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <AnimatedCard delay={0}>
+              <div className="flex flex-col">
+                <div className="flex items-center mb-4">
+                  <div className="bg-blue-100 p-3 rounded-full">
+                    <BarChartFill className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div className="ml-4">
+                    <p className="text-sm font-medium text-gray-600">Course Progress</p>
+                  </div>
+                </div>
+                <AnimatedProgress percentage={progressPercentage} />
               </div>
-              <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Course Progress</p>
+            </AnimatedCard>
+
+            <AnimatedCard delay={0.2}>
+              <div className="flex items-center">
+                <div className="bg-green-100 p-3 rounded-full">
+                  <Building className="h-6 w-6 text-green-600" />
+                </div>
+                <div className="ml-4">
+                  <p className="text-sm font-medium text-gray-600">School</p>
+                  <p className="text-lg font-bold text-gray-900">{userData["School Name"]}</p>
+                </div>
               </div>
-            </div>
-            <AnimatedProgress percentage={progressPercentage} />
-          </div>
-        </AnimatedCard>
+            </AnimatedCard>
 
-        <AnimatedCard delay={0.2}>
-          <div className="flex items-center">
-            <div className="bg-green-100 p-3 rounded-full">
-              <Building className="h-6 w-6 text-green-600" />
+            <AnimatedCard delay={0.4}>
+              <div className="flex items-center">
+                <div className="bg-purple-100 p-3 rounded-full">
+                  <PersonCircle className="h-6 w-6 text-purple-600" />
+                </div>
+                <div className="ml-4">
+                  <p className="text-sm font-medium text-gray-600">Role</p>
+                  <p className="text-lg font-bold text-gray-900">{userData["Role at School"]}</p>
+                </div>
+              </div>
+            </AnimatedCard>
+
+            <AnimatedCard delay={0.6}>
+              <div className="flex items-center">
+                <div className="bg-orange-100 p-3 rounded-full">
+                  <Laptop className="h-6 w-6 text-orange-600" />
+                </div>
+                <div className="ml-4">
+                  <p className="text-sm font-medium text-gray-600">Study Device</p>
+                  <p className="text-lg font-bold text-gray-900">{userData["Which device will you use for study during the course?"]}</p>
+                </div>
+              </div>
+            </AnimatedCard>
+
+            {/* Financial Statement Card */}
+            <AnimatedCard delay={0.8}>
+    <div className="flex flex-col">
+        <div className="flex items-center mb-4">
+            <div className="bg-emerald-100 p-3 rounded-full">
+                <svg 
+                    className="h-6 w-6 text-emerald-600"
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                >
+                    <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+                    />
+                </svg>
             </div>
             <div className="ml-4">
-              <p className="text-sm font-medium text-gray-600">School</p>
-              <p className="text-lg font-bold text-gray-900">{userData["School Name"]}</p>
+                <p className="text-sm font-medium text-gray-600">Financial Statement</p>
+                <p className="text-lg font-bold text-gray-900">
+                    {userFinancialData?.amountPaid.toLocaleString()} / 36,696 UGX
+                </p>
             </div>
-          </div>
-        </AnimatedCard>
-
-        <AnimatedCard delay={0.4}>
-          <div className="flex items-center">
-            <div className="bg-purple-100 p-3 rounded-full">
-              <PersonCircle className="h-6 w-6 text-purple-600" />
-            </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-600">Role</p>
-              <p className="text-lg font-bold text-gray-900">{userData["Role at School"]}</p>
-            </div>
-          </div>
-        </AnimatedCard>
-
-        <AnimatedCard delay={0.6}>
-          <div className="flex items-center">
-            <div className="bg-orange-100 p-3 rounded-full">
-              <Laptop className="h-6 w-6 text-orange-600" />
-            </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-600">Study Device</p>
-              <p className="text-lg font-bold text-gray-900">{userData["Which device will you use for study during the course?"]}</p>
-            </div>
-          </div>
-        </AnimatedCard>
-      </div>
-
-      {/* Course Progress Details */}
-      <AnimatedCard>
-        <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          <Calendar2Check className="mr-2 text-blue-600" />
-          Course Modules Progress
-        </h2>
-        <div className="space-y-4">
-          {Object.entries(userData.courseProgress).map(([module, status], index) => (
-            <MotionDiv
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              <p className="text-gray-800 flex-1 flex items-center">
-                {status === "Completed" ? (
-                  <CheckCircleFill className="text-green-600 mr-2" />
-                ) : (
-                  <HourglassSplit className="text-yellow-600 mr-2" />
-                )}
-                {module}
-              </p>
-              <span className={`px-3 py-1 rounded-full text-sm ${
-                status === "Completed" 
-                  ? "bg-green-100 text-green-800" 
-                  : "bg-yellow-100 text-yellow-800"
-              }`}>
-                {status}
-              </span>
-            </MotionDiv>
-          ))}
         </div>
-      </AnimatedCard>
-
-      {/* Contact Information */}
-      <AnimatedCard>
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Contact Information</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[
-            { icon: <EnvelopeFill className="mr-2 text-blue-600" />, label: "Email", value: userData["Email Address"] },
-            { icon: <TelephoneFill className="mr-2 text-blue-600" />, label: "WhatsApp", value: userData["WhatsApp number"] },
-            { icon: <GeoAltFill className="mr-2 text-blue-600" />, label: "District", value: userData["District of Residence"] },
-            { icon: <Building className="mr-2 text-blue-600" />, label: "Physical Classes", value: userData["Can you attend physical classes if the training centre is around Kampala?"] }
-          ].map((item, index) => (
-            <MotionDiv
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              <p className="text-sm text-gray-600 flex items-center">
-                {item.icon}
-                {item.label}
-              </p>
-              <p className="text-gray-800">{item.value}</p>
-            </MotionDiv>
-          ))}
+        <FinancialProgress percentage={paymentProgress} />
+        <div className="flex justify-between items-center mt-3 text-sm text-gray-500">
+            <span>Last payment: {userFinancialData?.lastPaymentDate}</span>
+            <span className="font-medium">
+                Balance: {(36696 - (userFinancialData?.amountPaid || 0)).toLocaleString()} UGX
+            </span>
         </div>
-        </AnimatedCard>
+    </div>
+</AnimatedCard>
+          </div>
+
+          {/* Course Progress Details */}
+          <AnimatedCard>
+            <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+              <Calendar2Check className="mr-2 text-blue-600" />
+              Course Modules Progress
+            </h2>
+            <div className="space-y-4">
+              {Object.entries(userData.courseProgress).map(([module, status], index) => (
+                <MotionDiv
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  <p className="text-gray-800 flex-1 flex items-center">
+                    {status === "Completed" ? (
+                      <CheckCircleFill className="text-green-600 mr-2" />
+                    ) : (
+                      <HourglassSplit className="text-yellow-600 mr-2" />
+                    )}
+                    {module}
+                  </p>
+                  <span className={`px-3 py-1 rounded-full text-sm ${
+                    status === "Completed" 
+                      ? "bg-green-100 text-green-800" 
+                      : "bg-yellow-100 text-yellow-800"
+                  }`}>
+                    {status}
+                  </span>
+                </MotionDiv>
+              ))}
+            </div>
+          </AnimatedCard>
+
+          {/* Contact Information */}
+          <AnimatedCard>
+            <h2 className="text-xl font-bold text-gray-900 mb-4">Contact Information</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { icon: <EnvelopeFill className="mr-2 text-blue-600" />, label: "Email", value: userData["Email Address"] },
+                { icon: <TelephoneFill className="mr-2 text-blue-600" />, label: "WhatsApp", value: userData["WhatsApp number"] },
+                { icon: <GeoAltFill className="mr-2 text-blue-600" />, label: "District", value: userData["District of Residence"] },
+                { icon: <Building className="mr-2 text-blue-600" />, label: "Physical Classes", value: userData["Can you attend physical classes if the training centre is around Kampala?"] }
+              ].map((item, index) => (
+                <MotionDiv
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  <p className="text-sm text-gray-600 flex items-center">
+                    {item.icon}
+                    {item.label}
+                  </p>
+                  <p className="text-gray-800">{item.value}</p>
+                </MotionDiv>
+              ))}
+            </div>
+          </AnimatedCard>
         </div>
       </main>
       
