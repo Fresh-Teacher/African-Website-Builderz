@@ -2,7 +2,6 @@
 import StudentTable from '@/components/StudentTable';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import { registrationData } from '@/utils/mockData';
 import { Loader2 } from 'lucide-react';
@@ -11,12 +10,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { 
   PersonCircle, 
-  Building,
   PeopleFill,
   CashStack,
   Search,
   PencilSquare,
-  TrashFill,
   BoxArrowRight,
   GraphUpArrow,
   FileEarmarkText,
