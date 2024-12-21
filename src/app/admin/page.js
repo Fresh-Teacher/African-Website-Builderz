@@ -1,5 +1,5 @@
 "use client";
-
+import StudentTable from '@/components/StudentTable';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -334,54 +334,7 @@ export default function AdminPanel() {
               </div>
             </div>
 
-            {/* Responsive Table/List */}
-            <div className="hidden lg:block"> {/* Desktop Table */}
-              <div className="overflow-x-auto">
-                <div className="min-w-full inline-block align-middle">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Student
-                        </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          School
-                        </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Progress
-                        </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Payment
-                        </th>
-                        <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Actions
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      {filteredStudents.map((student, index) => (
-                        <DesktopStudentRow 
-                          key={index}
-                          student={student}
-                          onEdit={setSelectedStudent}
-                        />
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile List View */}
-            <div className="lg:hidden divide-y divide-gray-200">
-              {filteredStudents.map((student, index) => (
-                <MobileStudentRow
-                  key={index}
-                  student={student}
-                  onEdit={setSelectedStudent}
-                />
-              ))}
-            </div>
+            <StudentTable students={filteredStudents} />
 
             {/* Empty State */}
             {filteredStudents.length === 0 && (
