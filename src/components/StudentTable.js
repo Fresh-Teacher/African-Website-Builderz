@@ -43,10 +43,10 @@ const StudentTable = ({ students }) => {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Phone</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">WhatsApp</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase">Name</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase">Phone</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase">WhatsApp</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase">Email</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
@@ -90,7 +90,7 @@ const StudentTable = ({ students }) => {
           >
             <div className="space-y-2">
               <div className="text-sm font-medium text-gray-900">{student["Full Name"]}</div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-gray-700">
                 <div className="flex items-center gap-2 mb-1">
                   <Phone className="h-4 w-4" />
                   {student["Telephone contact"]}
@@ -122,7 +122,7 @@ const StudentTable = ({ students }) => {
                   <h2 className="text-xl font-bold text-gray-900">{selectedStudent["Full Name"]}</h2>
                   <button 
                     onClick={() => setIsModalOpen(false)}
-                    className="text-gray-400 hover:text-gray-500"
+                    className="text-gray-600 hover:text-gray-700"
                   >
                     <X className="h-5 w-5" />
                   </button>
@@ -147,7 +147,7 @@ const StudentTable = ({ students }) => {
                     <div className="space-y-2">
                       {Object.entries(selectedStudent.courseProgress).map(([course, status], index) => (
                         <div key={index} className="flex items-center justify-between">
-                          <span className="text-sm text-gray-600">{course}</span>
+                          <span className="text-sm text-gray-700">{course}</span>
                           <span className={`text-sm px-2 py-1 rounded ${
                             status === "Completed" ? "bg-green-100 text-green-800" :
                             "bg-yellow-100 text-yellow-800"
@@ -162,7 +162,7 @@ const StudentTable = ({ students }) => {
                   {/* Payment Section */}
                   <div>
                     <h3 className="text-lg font-semibold mb-4">Payment Information</h3>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-700">
                       <p className="mb-2">Amount Paid: {selectedStudent.amountPaid?.toLocaleString() || 0} UGX</p>
                     </div>
                   </div>
@@ -172,16 +172,16 @@ const StudentTable = ({ students }) => {
                     <h3 className="text-lg font-semibold mb-4">School Information</h3>
                     <div className="grid grid-cols-1 gap-3">
                       <div className="flex items-center">
-                        <School className="h-5 w-5 text-gray-400 mr-2" />
+                        <School className="h-5 w-5 text-gray-600 mr-2" />
                         <div>
                           <p className="text-sm font-medium text-gray-900">{selectedStudent["School Name"]}</p>
-                          <p className="text-sm text-gray-600">{selectedStudent["Level of Institution"]}</p>
-                          <p className="text-sm text-gray-600">{selectedStudent["Role at School"]}</p>
+                          <p className="text-sm text-gray-700">{selectedStudent["Level of Institution"]}</p>
+                          <p className="text-sm text-gray-700">{selectedStudent["Role at School"]}</p>
                         </div>
                       </div>
                       <div className="flex items-center">
-                        <MapPin className="h-5 w-5 text-gray-400 mr-2" />
-                        <span className="text-sm text-gray-600">{selectedStudent["District of Residence"]}</span>
+                        <MapPin className="h-5 w-5 text-gray-600 mr-2" />
+                        <span className="text-sm text-gray-700">{selectedStudent["District of Residence"]}</span>
                       </div>
                     </div>
                   </div>
@@ -191,15 +191,15 @@ const StudentTable = ({ students }) => {
                     <h3 className="text-lg font-semibold mb-4">Additional Information</h3>
                     <div className="space-y-3">
                       <div className="flex items-center">
-                        <Calendar className="h-5 w-5 text-gray-400 mr-2" />
-                        <span className="text-sm text-gray-600">
+                        <Calendar className="h-5 w-5 text-gray-600 mr-2" />
+                        <span className="text-sm text-gray-700">
                           Registered: {formatDateTime(selectedStudent["Timestamp"])}
                         </span>
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-gray-700">
                         <strong>Study Device:</strong> {selectedStudent["Which device will you use for study during the course?"]}
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-gray-700">
                         <strong>Physical Classes:</strong> {selectedStudent["Can you attend physical classes if the training centre is around Kampala?"]}
                       </div>
                     </div>
