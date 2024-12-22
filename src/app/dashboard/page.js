@@ -96,8 +96,9 @@ const AnimatedCard = ({ children, delay = 0 }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, delay }}
-      className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all"
-    >
+      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-all"
+
+      >
       {children}
     </MotionDiv>
   );
@@ -174,7 +175,7 @@ export default function Dashboard() {
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
-        <div className="flex-1 flex items-center justify-center bg-gray-50">
+        <div className="flex-1 flex items-center justify-center bg-gray-50 dark:bg-gray-900">
           <div className="text-center">
             <Loader2 className="h-8 w-8 animate-spin text-blue-600 mx-auto mb-2" />
             <p className="text-gray-600">Loading your dashboard...</p>
@@ -193,8 +194,8 @@ export default function Dashboard() {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 bg-gray-50">
-        <div className="max-w-7xl mx-auto p-6">
+      <main className="flex-1 bg-gray-50 dark:bg-gray-900">
+                <div className="max-w-7xl mx-auto p-6">
           {/* Welcome Header */}
           <MotionDiv 
             initial={{ opacity: 0, y: -20 }}
@@ -205,16 +206,18 @@ export default function Dashboard() {
             <div className="flex items-center">
               <PersonCircle className="text-blue-600 h-8 w-8 mr-3" />
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
                   {greeting}, Tr. {getLastName(userData["Full Name"])}
                 </h1>
-                <p className="text-gray-600">Track your progress in the African Website Builders course</p>
-              </div>
+                <p className="text-gray-600 dark:text-gray-400">Track your progress in the African Website Builders course</p>
+
+</div>
             </div>
             <button
               onClick={handleLogout}
-              className="flex items-center px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 rounded-lg border border-gray-200 shadow-sm transition-colors duration-200 group"
-            >
+              className="flex items-center px-4 py-2 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm transition-colors duration-200 group"
+
+              >
               <BoxArrowRight className="h-5 w-5 mr-2 text-gray-500 group-hover:text-red-500 transition-colors" />
               <span className="group-hover:text-red-500 transition-colors">Logout</span>
             </button>
@@ -230,7 +233,7 @@ export default function Dashboard() {
                     <BarChartFill className="h-6 w-6 text-blue-600" />
                   </div>
                   <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-600">Course Progress</p>
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Course Progress</p>
                   </div>
                 </div>
                 <AnimatedProgress percentage={progressPercentage} />
@@ -244,8 +247,8 @@ export default function Dashboard() {
                   <Building className="h-6 w-6 text-green-600" />
                 </div>
                 <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-600">School</p>
-                  <p className="text-lg font-bold text-gray-900">{userData["School Name"]}</p>
+                  <p className="text-sm font-medium text-gray-600 dark:text-gray-400">School</p>
+                  <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{userData["School Name"]}</p>
                 </div>
               </div>
             </AnimatedCard>
@@ -257,8 +260,8 @@ export default function Dashboard() {
                   <PersonCircle className="h-6 w-6 text-purple-600" />
                 </div>
                 <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-600">Role</p>
-                  <p className="text-lg font-bold text-gray-900">{userData["Role at School"]}</p>
+                  <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Role</p>
+                  <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{userData["Role at School"]}</p>
                 </div>
               </div>
             </AnimatedCard>
@@ -283,8 +286,8 @@ export default function Dashboard() {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-600">Tuition</p>
-                    <p className="text-lg font-bold text-gray-900">
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Tuition</p>
+                    <p className="text-lg font-bold text-gray-900 dark:text-gray-100">
                       {userData.amountPaid.toLocaleString()} / 36,696 UGX
                     </p>
                   </div>
@@ -310,8 +313,9 @@ export default function Dashboard() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                >
+                  className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+
+                  >
                   <p className="text-gray-800 flex-1 flex items-center">
                     {status === "Completed" ? (
                       <CheckCircleFill className="text-green-600 mr-2" />
@@ -322,8 +326,9 @@ export default function Dashboard() {
                   </p>
                   <span className={`px-3 py-1 rounded-full text-sm ${
                     status === "Completed" 
-                      ? "bg-green-100 text-green-800" 
-                      : "bg-yellow-100 text-yellow-800"
+                    ? "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200" 
+                    : "bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200"}
+
                   }`}>
                     {status}
                   </span>
@@ -347,13 +352,13 @@ export default function Dashboard() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                >
+                  className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  >
                   <p className="text-sm text-gray-600 flex items-center">
                     {item.icon}
                     {item.label}
                   </p>
-                  <p className="text-gray-800">{item.value}</p>
+                  <p className="text-gray-800 dark:text-gray-200">{item.value}</p>
                 </MotionDiv>
               ))}
             </div>
