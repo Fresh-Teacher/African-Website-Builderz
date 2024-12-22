@@ -9,6 +9,7 @@ import { Loader2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ScrollToTopButton from '@/components/ScrollToTopButton'; // Add this line
 import { 
   PersonCircle, 
   Building, 
@@ -192,9 +193,8 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
       <main className="flex-1 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto p-6">
+          <div className="max-w-7xl mx-auto p-6">
           {/* Welcome Header */}
           <MotionDiv 
             initial={{ opacity: 0, y: -20 }}
@@ -359,9 +359,9 @@ export default function Dashboard() {
             </div>
           </AnimatedCard>
         </div>
-      </main>
-      
-      <Footer />
-    </div>
-  );
+        </main>
+    <Footer />
+    <ScrollToTopButton /> {/* Add this line */}
+  </div>
+);
 }
