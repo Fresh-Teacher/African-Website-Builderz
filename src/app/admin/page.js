@@ -29,15 +29,16 @@ const StatsCard = ({ icon, label, value, bgColor, textColor }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
-    className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all"
-  >
+    className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-all"
+    >
     <div className="flex items-center">
       <div className={`${bgColor} p-3 rounded-full`}>
         {icon}
       </div>
       <div className="ml-4 flex-1 min-w-0">
-        <p className="text-sm font-medium text-gray-600 truncate">{label}</p>
-        <p className={`text-base lg:text-lg font-bold ${textColor} truncate`}>{value}</p>
+      <p className="text-sm font-medium text-gray-600 dark:text-gray-400 truncate">{label}</p>
+
+<p className={`text-base lg:text-lg font-bold ${textColor} truncate`}>{value}</p>
       </div>
     </div>
   </MotionDiv>
@@ -58,7 +59,7 @@ const MobileStudentRow = ({ student, onEdit }) => {
   const paymentPercentage = Math.round((amountPaid / totalAmount) * 100);
 
   return (
-    <div className="bg-white border-b border-gray-200">
+    <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
       <div 
         className="p-4 flex items-center justify-between cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
@@ -66,8 +67,8 @@ const MobileStudentRow = ({ student, onEdit }) => {
         <div className="flex items-center flex-1 min-w-0">
           <PersonCircle className="h-8 w-8 text-gray-400 flex-shrink-0" />
           <div className="ml-3 flex-1 min-w-0">
-            <div className="text-sm font-medium text-gray-900 truncate">{student["Full Name"]}</div>
-            <div className="text-xs text-gray-500 truncate">{student["Email Address"]}</div>
+          <div className="text-sm font-medium text-gray-900 dark:text-gray-100 truncate">{student["Full Name"]}</div>
+          <div className="text-xs text-gray-500 dark:text-gray-400 truncate">{student["Email Address"]}</div>
           </div>
         </div>
         <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform ${isExpanded ? 'transform rotate-180' : ''}`} />
@@ -134,7 +135,7 @@ const DesktopStudentRow = ({ student, onEdit }) => {
   const paymentPercentage = Math.round((amountPaid / totalAmount) * 100);
 
   return (
-    <tr className="hover:bg-gray-50">
+    <tr className="hover:bg-gray-50 dark:hover:bg-gray-700">
       <td className="px-6 py-4 whitespace-nowrap">
         <div className="flex items-center">
           <PersonCircle className="h-8 w-8 text-gray-400" />
@@ -237,7 +238,7 @@ export default function AdminPanel() {
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
-        <div className="flex-1 flex items-center justify-center bg-gray-50">
+        <div className="flex-1 flex items-center justify-center bg-gray-50 dark:bg-gray-900">
           <div className="text-center">
             <Loader2 className="h-8 w-8 animate-spin text-blue-600 mx-auto mb-2" />
             <p className="text-gray-600">Loading admin panel...</p>
@@ -252,8 +253,7 @@ export default function AdminPanel() {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+      <main className="flex-1 bg-gray-50 dark:bg-gray-900">        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           {/* Header */}
           <MotionDiv 
             initial={{ opacity: 0, y: -20 }}
@@ -265,13 +265,13 @@ export default function AdminPanel() {
               <div className="flex items-center">
                 <GearFill className="text-blue-600 h-6 w-6 sm:h-8 sm:w-8 mr-3" />
                 <div>
-                  <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Admin Dashboard</h1>
-                  <p className="text-sm sm:text-base text-gray-600">Manage students and track progress</p>
+                  <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100">C Panel</h1>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">Manage students and track progress</p>
                 </div>
               </div>
               <button
                 onClick={handleLogout}
-                className="flex items-center px-4 py-2 bg-white hover:bg-gray-50 text-gray-700 rounded-lg border border-gray-200 shadow-sm transition-colors duration-200 group"
+                className="flex items-center px-4 py-2 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm transition-colors duration-200 group"
               >
                 <BoxArrowRight className="h-5 w-5 mr-2 text-gray-500 group-hover:text-red-500 transition-colors" />
                 <span className="group-hover:text-red-500 transition-colors">Logout</span>
@@ -314,8 +314,7 @@ export default function AdminPanel() {
           </div>
 
           {/* Student List */}
-          <div className="bg-white rounded-lg shadow-sm">
-            <div className="p-4 sm:p-6 border-b border-gray-200">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm">            <div className="p-4 sm:p-6 border-b border-gray-200">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
                 <h2 className="text-lg sm:text-xl font-bold text-gray-900">Student Management</h2>
                 <div className="relative w-full sm:w-auto">
@@ -323,7 +322,8 @@ export default function AdminPanel() {
                   <input
                     type="text"
                     placeholder="Search students..."
-                    className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
@@ -337,8 +337,8 @@ export default function AdminPanel() {
             {filteredStudents.length === 0 && (
               <div className="text-center py-12">
                 <Search className="mx-auto h-12 w-12 text-gray-400" />
-                <h3 className="mt-2 text-sm font-medium text-gray-900">No students found</h3>
-                <p className="mt-1 text-sm text-gray-500">
+                <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-gray-100">No students found</h3>
+                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                   Try adjusting your search terms or clear the search to see all students.
                 </p>
               </div>
