@@ -6,9 +6,42 @@ const SectionTitle = ({ children }) => (
     <h3 className="text-lg font-bold text-gray-900 mb-4">{children}</h3>
   );
 
-const StudentTable = ({ students }) => {
-  const [selectedStudent, setSelectedStudent] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const StudentTable = ({ students }) => {
+    const [selectedStudent, setSelectedStudent] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  
+    const handleContact = (e, type, value) => {
+      e.stopPropagation(); // Prevent row click event from triggering
+      if (!value) return;
+  
+      switch (type) {
+        case 'whatsapp':
+          // Remove any non-numeric characters and ensure it starts with country code
+          const whatsappNumber = value.replace(/\D/g, '');
+          window.open(`https://wa.me/${whatsappNumber}`, '_blank');
+          break;
+        case 'phone':
+          window.open(`tel:${value}`, '_blank');
+          break;
+        case 'email':
+          window.open(`mailto:${value}`, '_blank');
+          break;
+        default:
+          break;
+      }
+    };
+  
+    const ContactItem = ({ type, value, icon: Icon }) => (
+      <div 
+        onClick={(e) => handleContact(e, type, value)}
+        className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 cursor-pointer transition-colors"
+        title={`Click to ${type === 'whatsapp' ? 'message on WhatsApp' : type === 'phone' ? 'call' : 'send email'}`}
+      >
+        <Icon className="h-4 w-4" />
+        <span>{value}</span>
+      </div>
+    );
+  
 
   const formatDateTime = (timestamp) => {
     if (!timestamp) return '';
@@ -68,22 +101,25 @@ const StudentTable = ({ students }) => {
                   <div className="text-sm font-medium text-gray-900">{student["Full Name"]}</div>
                 </td>
                 <td className="px-4 py-4">
-                  <div className="flex items-center text-sm text-gray-900">
-                    <Phone className="h-4 w-4 mr-2 text-gray-600" />
-                    {student["Telephone contact"]}
-                  </div>
+                  <ContactItem 
+                    type="phone"
+                    value={student["Telephone contact"]}
+                    icon={Phone}
+                  />
                 </td>
                 <td className="px-4 py-4">
-                  <div className="flex items-center text-sm text-gray-900">
-                    <MessageCircle className="h-4 w-4 text-[#25D366]" />
-                    {student["WhatsApp number"]}
-                  </div>
+                  <ContactItem 
+                    type="whatsapp"
+                    value={student["WhatsApp number"]}
+                    icon={MessageCircle}
+                  />
                 </td>
                 <td className="px-4 py-4">
-                  <div className="flex items-center text-sm text-gray-900">
-                    <Mail className="h-4 w-4 mr-2 text-gray-600" />
-                    {student["Email Address"]}
-                  </div>
+                  <ContactItem 
+                    type="email"
+                    value={student["Email Address"]}
+                    icon={Mail}
+                  />
                 </td>
               </tr>
             ))}
@@ -96,7 +132,7 @@ const StudentTable = ({ students }) => {
         {students.map((student, index) => (
           <div 
             key={index}
-            className="bg-white p-4 rounded-lg shadow cursor-pointer"
+            className="bg-white p-4 rounded-lg shadow"
             onClick={() => {
               setSelectedStudent(student);
               setIsModalOpen(true);
@@ -104,19 +140,22 @@ const StudentTable = ({ students }) => {
           >
             <div className="space-y-2">
               <div className="text-sm font-medium text-gray-900">{student["Full Name"]}</div>
-              <div className="text-sm text-gray-600">
-                <div className="flex items-center gap-2 mb-1">
-                  <Phone className="h-4 w-4 text-gray-600" />
-                  {student["Telephone contact"]}
-                </div>
-                <div className="flex items-center gap-2 mb-1">
-                  <MessageSquare className="h-4 w-4 text-gray-600" />
-                  {student["WhatsApp number"]}
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-gray-600" />
-                  {student["Email Address"]}
-                </div>
+              <div className="space-y-2">
+                <ContactItem 
+                  type="phone"
+                  value={student["Telephone contact"]}
+                  icon={Phone}
+                />
+                <ContactItem 
+                  type="whatsapp"
+                  value={student["WhatsApp number"]}
+                  icon={MessageCircle}
+                />
+                <ContactItem 
+                  type="email"
+                  value={student["Email Address"]}
+                  icon={Mail}
+                />
               </div>
             </div>
           </div>
@@ -127,7 +166,7 @@ const StudentTable = ({ students }) => {
       {isModalOpen && selectedStudent && (
         <div className="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
             <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
             
             <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
@@ -147,25 +186,28 @@ const StudentTable = ({ students }) => {
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <SectionTitle>Contact Information</SectionTitle>
                     <div className="space-y-3">
-                    <div className="flex items-center">
-                        <Phone className="h-5 w-5 text-gray-600 mr-2" />
-                        <span className="text-sm text-gray-600">{selectedStudent["Telephone contact"]}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <MessageSquare className="h-5 w-5 text-gray-600 mr-2" />
-                        <span className="text-sm text-gray-600">{selectedStudent["WhatsApp number"]}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Mail className="h-5 w-5 text-gray-600 mr-2" />
-                        <span className="text-sm text-gray-600">{selectedStudent["Email Address"]}</span>
-                      </div>
+                      <ContactItem 
+                        type="phone"
+                        value={selectedStudent["Telephone contact"]}
+                        icon={Phone}
+                      />
+                      <ContactItem 
+                        type="whatsapp"
+                        value={selectedStudent["WhatsApp number"]}
+                        icon={MessageCircle}
+                      />
+                      <ContactItem 
+                        type="email"
+                        value={selectedStudent["Email Address"]}
+                        icon={Mail}
+                      />
                     </div>
                   </div>
 
-                     {/* Progress Section */}
-                     <div className="bg-gray-50 p-4 rounded-lg">
+                  {/* Progress Section */}
+                  <div className="bg-gray-50 p-4 rounded-lg">
                     <SectionTitle>Course Progress</SectionTitle>
-                  <div className="mb-4">
+                    <div className="mb-4">
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-600">Overall Progress</span>
                         <span className="text-gray-600">{getProgressPercentage(selectedStudent.courseProgress)}%</span>
@@ -192,18 +234,18 @@ const StudentTable = ({ students }) => {
                     </div>
                   </div>
 
-                 {/* Payment Section */}
-                 <div className="bg-gray-50 p-4 rounded-lg">
+                  {/* Payment Section */}
+                  <div className="bg-gray-50 p-4 rounded-lg">
                     <SectionTitle>Payment Information</SectionTitle>
-                   <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-600">
                       <p className="mb-2">Amount Paid: {selectedStudent.amountPaid?.toLocaleString() || 0} UGX</p>
                     </div>
                   </div>
 
-                    {/* School Information */}
-                    <div className="bg-gray-50 p-4 rounded-lg">
+                  {/* School Information */}
+                  <div className="bg-gray-50 p-4 rounded-lg">
                     <SectionTitle>School Information</SectionTitle>
-                 <div className="grid grid-cols-1 gap-3">
+                    <div className="grid grid-cols-1 gap-3">
                       <div className="flex items-center">
                         <School className="h-5 w-5 text-gray-600 mr-2" />
                         <div>
@@ -222,7 +264,7 @@ const StudentTable = ({ students }) => {
                   {/* Additional Information */}
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <SectionTitle>Additional Information</SectionTitle>
-                   <div className="space-y-3">
+                    <div className="space-y-3">
                       <div className="flex items-center">
                         <Calendar className="h-5 w-5 text-gray-600 mr-2" />
                         <span className="text-sm text-gray-600">
