@@ -1,47 +1,244 @@
-import React, { useState } from 'react';
-import { X, Phone, Mail, MapPin, School, Calendar, MessageSquare } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, Phone, Mail, MapPin, School, Calendar, MessageSquare, ChevronLeft, ChevronRight, ArrowUp } from 'lucide-react';
 import { MessageCircle } from 'lucide-react';
 
 const SectionTitle = ({ children }) => (
-    <h3 className="text-lg font-bold text-gray-900 mb-4">{children}</h3>
-  );
+  <h3 className="text-lg font-bold text-gray-900 mb-4">{children}</h3>
+);
 
-  const StudentTable = ({ students }) => {
-    const [selectedStudent, setSelectedStudent] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+const ScrollToTop = () => {
+    const [isVisible, setIsVisible] = useState(false);
   
-    const handleContact = (e, type, value) => {
-      e.stopPropagation(); // Prevent row click event from triggering
-      if (!value) return;
+    useEffect(() => {
+      const toggleVisibility = () => {
+        if (window.pageYOffset > 300) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      };
   
-      switch (type) {
-        case 'whatsapp':
-          // Remove any non-numeric characters and ensure it starts with country code
-          const whatsappNumber = value.replace(/\D/g, '');
-          window.open(`https://wa.me/${whatsappNumber}`, '_blank');
-          break;
-        case 'phone':
-          window.open(`tel:${value}`, '_blank');
-          break;
-        case 'email':
-          window.open(`mailto:${value}`, '_blank');
-          break;
-        default:
-          break;
+      window.addEventListener('scroll', toggleVisibility);
+      return () => window.removeEventListener('scroll', toggleVisibility);
+    }, []);
+  
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+  
+    return isVisible ? (
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-4 right-4 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50 group"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp className="h-5 w-5" />
+        <span className="absolute -top-8 right-0 bg-gray-900 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+          Scroll to top
+        </span>
+      </button>
+    ) : null;
+  };
+  
+  const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+    const [jumpToPage, setJumpToPage] = useState(currentPage + 1);
+  
+    useEffect(() => {
+      const nextPage = currentPage + 1;
+      if (nextPage <= totalPages) {
+        setJumpToPage(nextPage);
+      } else {
+        setJumpToPage(1);
+      }
+    }, [currentPage, totalPages]);
+  
+    const handlePageSubmit = (e) => {
+      e.preventDefault();
+      const pageNumber = parseInt(jumpToPage);
+      if (pageNumber >= 1 && pageNumber <= totalPages) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        onPageChange(pageNumber);
       }
     };
   
-    const ContactItem = ({ type, value, icon: Icon }) => (
-      <div 
-        onClick={(e) => handleContact(e, type, value)}
-        className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 cursor-pointer transition-colors"
-        title={`Click to ${type === 'whatsapp' ? 'message on WhatsApp' : type === 'phone' ? 'call' : 'send email'}`}
-      >
-        <Icon className="h-4 w-4" />
-        <span>{value}</span>
+    const handlePageChange = (newPage) => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      onPageChange(newPage);
+    };
+  
+    return (
+      <div className="bg-white border rounded-lg shadow-sm mt-4 mb-8">
+        <div className="p-3 sm:p-4">
+          {/* Mobile Layout */}
+          <div className="flex flex-col space-y-3">
+            {/* Navigation Buttons - Mobile */}
+            <div className="flex justify-between sm:hidden w-full">
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="inline-flex items-center px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                <ChevronLeft className="h-4 w-4 mr-1" />
+                <span>Previous</span>
+              </button>
+              
+              <span className="text-sm text-gray-600 self-center">
+                Page {currentPage} of {totalPages}
+              </span>
+              
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="inline-flex items-center px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                <span>Next</span>
+                <ChevronRight className="h-4 w-4 ml-1" />
+              </button>
+            </div>
+  
+            {/* Jump to Page - Mobile */}
+            <div className="sm:hidden">
+              <form onSubmit={handlePageSubmit} className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <label htmlFor="jump-to-page-mobile" className="text-sm text-gray-600 whitespace-nowrap">
+                    Jump to page:
+                  </label>
+                  <input
+                    id="jump-to-page-mobile"
+                    type="number"
+                    min="1"
+                    max={totalPages}
+                    value={jumpToPage}
+                    onChange={(e) => setJumpToPage(e.target.value)}
+                    className="w-16 px-2 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="px-3 py-1.5 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors flex items-center space-x-1"
+                >
+                  <span>Jump</span>
+                </button>
+              </form>
+            </div>
+  
+            {/* Desktop Layout */}
+            <div className="hidden sm:flex sm:flex-row justify-between items-center">
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="inline-flex items-center px-4 py-2 text-sm bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  <ChevronLeft className="h-4 w-4 mr-1" />
+                  <span>Previous Page</span>
+                </button>
+                
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="inline-flex items-center px-4 py-2 text-sm bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  <span>Next Page</span>
+                  <ChevronRight className="h-4 w-4 ml-1" />
+                </button>
+              </div>
+  
+              <div className="flex items-center space-x-4">
+                <div className="text-sm text-gray-600">
+                  Page {currentPage} of {totalPages}
+                </div>
+                <form onSubmit={handlePageSubmit} className="flex items-center space-x-2">
+                  <label htmlFor="jump-to-page-desktop" className="text-sm text-gray-600 whitespace-nowrap">
+                    Go to page:
+                  </label>
+                  <input
+                    id="jump-to-page-desktop"
+                    type="number"
+                    min="1"
+                    max={totalPages}
+                    value={jumpToPage}
+                    onChange={(e) => setJumpToPage(e.target.value)}
+                    className="w-16 px-2 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  />
+                  <button
+                    type="submit"
+                    className="px-3 py-1 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors flex items-center space-x-1"
+                  >
+                    <span>Jump</span>
+                    <ArrowUp className="h-3 w-3" />
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+  
+          {/* Progress Bar */}
+          <div className="w-full bg-gray-200 rounded-full h-1.5 mt-3">
+            <div 
+              className="bg-blue-600 h-1.5 rounded-full transition-all duration-300"
+              style={{ width: `${(currentPage / totalPages) * 100}%` }}
+            />
+          </div>
+        </div>
       </div>
     );
-  
+  };
+
+    const StudentTable = ({ students }) => {
+        const [selectedStudent, setSelectedStudent] = useState(null);
+        const [isModalOpen, setIsModalOpen] = useState(false);
+        const [currentPage, setCurrentPage] = useState(1);
+        const studentsPerPage = 10;
+      
+        const totalPages = Math.ceil(students.length / studentsPerPage);
+        const startIndex = (currentPage - 1) * studentsPerPage;
+        const endIndex = startIndex + studentsPerPage;
+        const currentStudents = students.slice(startIndex, endIndex);
+      
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const handleContact = (e, type, value) => {
+    e.stopPropagation();
+    if (!value) return;
+
+    switch (type) {
+      case 'whatsapp':
+        const whatsappNumber = value.replace(/\D/g, '');
+        window.open(`https://wa.me/${whatsappNumber}`, '_blank');
+        break;
+      case 'phone':
+        window.open(`tel:${value}`, '_blank');
+        break;
+      case 'email':
+        window.open(`mailto:${value}`, '_blank');
+        break;
+      default:
+        break;
+    }
+  };
+
+  const ContactItem = ({ type, value, icon: Icon }) => (
+    <div 
+      onClick={(e) => handleContact(e, type, value)}
+      className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 cursor-pointer transition-colors"
+      title={`Click to ${type === 'whatsapp' ? 'message on WhatsApp' : type === 'phone' ? 'call' : 'send email'}`}
+    >
+      <Icon className="h-4 w-4" />
+      <span>{value}</span>
+    </div>
+  );
 
   const formatDateTime = (timestamp) => {
     if (!timestamp) return '';
@@ -74,8 +271,9 @@ const SectionTitle = ({ children }) => (
     return totalCourses > 0 ? Math.round((completedCourses / totalCourses) * 100) : 0;
   };
 
-  return (
+   return (
     <div className="w-full relative">
+        <ScrollToTop />
       {/* Desktop Table */}
       <div className="hidden lg:block overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
@@ -88,7 +286,7 @@ const SectionTitle = ({ children }) => (
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {students.map((student, index) => (
+            {currentStudents.map((student, index) => (
               <tr 
                 key={index} 
                 className="hover:bg-gray-50 cursor-pointer"
@@ -124,12 +322,17 @@ const SectionTitle = ({ children }) => (
               </tr>
             ))}
           </tbody>
-        </table>
+          </table>
+        <Pagination 
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       </div>
 
       {/* Mobile List */}
       <div className="lg:hidden space-y-4">
-        {students.map((student, index) => (
+        {currentStudents.map((student, index) => (
           <div 
             key={index}
             className="bg-white p-4 rounded-lg shadow"
@@ -159,8 +362,13 @@ const SectionTitle = ({ children }) => (
               </div>
             </div>
           </div>
-        ))}
-      </div>
+         ))}
+         <Pagination 
+           currentPage={currentPage}
+           totalPages={totalPages}
+           onPageChange={setCurrentPage}
+         />
+       </div>
 
       {/* Modal with Details */}
       {isModalOpen && selectedStudent && (
