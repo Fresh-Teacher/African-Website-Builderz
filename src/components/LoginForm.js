@@ -82,7 +82,7 @@ const LoginForm = () => {
       )}
 
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-bold text-blue-900 dark:text-blue-400 mb-2">Welcome Back</h1>
+        <h1 className="text-2xl font-bold text-blue-900 dark:text-blue-400 mb-2">Login Portal</h1>
         <p className="text-gray-500 dark:text-gray-400">Please login to access your account</p>
       </div>
 
