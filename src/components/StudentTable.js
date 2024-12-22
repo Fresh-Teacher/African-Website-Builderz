@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { X, Phone, Mail, MapPin, School, Calendar, MessageSquare } from 'lucide-react';
 import { MessageCircle } from 'lucide-react';
 
+const SectionTitle = ({ children }) => (
+    <h3 className="text-lg font-bold text-gray-900 mb-4">{children}</h3>
+  );
+
 const StudentTable = ({ students }) => {
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -129,7 +133,7 @@ const StudentTable = ({ students }) => {
             <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <div className="flex justify-between items-start mb-6">
-                  <h2 className="text-xl font-bold text-gray-900">{selectedStudent["Full Name"]}</h2>
+                  <h2 className="text-2xl font-bold text-gray-900">{selectedStudent["Full Name"]}</h2>
                   <button 
                     onClick={() => setIsModalOpen(false)}
                     className="text-gray-600 hover:text-gray-700"
@@ -138,12 +142,12 @@ const StudentTable = ({ students }) => {
                   </button>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {/* Contact Information */}
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <SectionTitle>Contact Information</SectionTitle>
                     <div className="space-y-3">
-                      <div className="flex items-center">
+                    <div className="flex items-center">
                         <Phone className="h-5 w-5 text-gray-600 mr-2" />
                         <span className="text-sm text-gray-600">{selectedStudent["Telephone contact"]}</span>
                       </div>
@@ -158,10 +162,10 @@ const StudentTable = ({ students }) => {
                     </div>
                   </div>
 
-                  {/* Progress Section */}
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">Course Progress</h3>
-                    <div className="mb-4">
+                     {/* Progress Section */}
+                     <div className="bg-gray-50 p-4 rounded-lg">
+                    <SectionTitle>Course Progress</SectionTitle>
+                  <div className="mb-4">
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-600">Overall Progress</span>
                         <span className="text-gray-600">{getProgressPercentage(selectedStudent.courseProgress)}%</span>
@@ -188,18 +192,18 @@ const StudentTable = ({ students }) => {
                     </div>
                   </div>
 
-                  {/* Payment Section */}
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">Payment Information</h3>
-                    <div className="text-sm text-gray-600">
+                 {/* Payment Section */}
+                 <div className="bg-gray-50 p-4 rounded-lg">
+                    <SectionTitle>Payment Information</SectionTitle>
+                   <div className="text-sm text-gray-600">
                       <p className="mb-2">Amount Paid: {selectedStudent.amountPaid?.toLocaleString() || 0} UGX</p>
                     </div>
                   </div>
 
-                  {/* School Information */}
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">School Information</h3>
-                    <div className="grid grid-cols-1 gap-3">
+                    {/* School Information */}
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                    <SectionTitle>School Information</SectionTitle>
+                 <div className="grid grid-cols-1 gap-3">
                       <div className="flex items-center">
                         <School className="h-5 w-5 text-gray-600 mr-2" />
                         <div>
@@ -216,9 +220,9 @@ const StudentTable = ({ students }) => {
                   </div>
 
                   {/* Additional Information */}
-                  <div>
-                    <h3 className="text-lg font-semibold mb-4">Additional Information</h3>
-                    <div className="space-y-3">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <SectionTitle>Additional Information</SectionTitle>
+                   <div className="space-y-3">
                       <div className="flex items-center">
                         <Calendar className="h-5 w-5 text-gray-600 mr-2" />
                         <span className="text-sm text-gray-600">
