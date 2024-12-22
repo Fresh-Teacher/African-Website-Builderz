@@ -3,9 +3,10 @@ import { X, Phone, Mail, MapPin, School, Calendar, MessageSquare, ChevronLeft, C
 import { MessageCircle } from 'lucide-react';
 
 const SectionTitle = ({ children }) => (
-  <h3 className="text-lg font-bold text-gray-900 mb-4">{children}</h3>
-);
+    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">{children}</h3>
+  );
 
+// ScrollToTop component remains the same but with dark mode classes
 const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
   
@@ -30,17 +31,17 @@ const ScrollToTop = () => {
     };
   
     return isVisible ? (
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-4 right-4 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50 group"
-        aria-label="Scroll to top"
-      >
-        <ArrowUp className="h-5 w-5" />
-        <span className="absolute -top-8 right-0 bg-gray-900 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-          Scroll to top
-        </span>
-      </button>
-    ) : null;
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 p-3 bg-blue-600 dark:bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors z-50 group"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="h-5 w-5" />
+          <span className="absolute -top-8 right-0 bg-gray-900 dark:bg-gray-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            Scroll to top
+          </span>
+        </button>
+      ) : null;
   };
   
   const Pagination = ({ currentPage, totalPages, onPageChange }) => {
@@ -284,38 +285,38 @@ const ScrollToTop = () => {
       <ScrollToTop />
       
       {/* Desktop Table */}
-      <div className="hidden lg:block overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-800 uppercase">Name</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-800 uppercase">Phone</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-800 uppercase">WhatsApp</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-800 uppercase">Email</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {currentStudents.map((student, index) => (
-              <tr 
-                key={index} 
-                className="hover:bg-gray-50 cursor-pointer"
-                onClick={() => {
-                  setSelectedStudent(student);
-                  setIsModalOpen(true);
-                }}
-              >
-                <td className="px-4 py-4">
-                  <div className="text-sm font-medium text-gray-900">
-                    {formatName(student["Full Name"])}
-                  </div>
-                </td>
-                <td className="px-4 py-4">
-                  <ContactItem 
-                    type="phone"
-                    value={student["Telephone contact"]}
-                    icon={Phone}
-                  />
-                </td>
+        <div className="hidden lg:block overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead className="bg-gray-50 dark:bg-gray-800">
+              <tr>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-800 dark:text-gray-200 uppercase">Name</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-800 dark:text-gray-200 uppercase">Phone</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-800 dark:text-gray-200 uppercase">WhatsApp</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-800 dark:text-gray-200 uppercase">Email</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
+              {currentStudents.map((student, index) => (
+                <tr 
+                  key={index} 
+                  className="hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer"
+                  onClick={() => {
+                    setSelectedStudent(student);
+                    setIsModalOpen(true);
+                  }}
+                >
+                  <td className="px-4 py-4">
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                      {formatName(student["Full Name"])}
+                    </div>
+                  </td>
+                  <td className="px-4 py-4">
+                    <ContactItem 
+                      type="phone"
+                      value={student["Telephone contact"]}
+                      icon={Phone}
+                    />
+                  </td>
                 <td className="px-4 py-4">
                   <ContactItem 
                     type="whatsapp"
@@ -341,21 +342,21 @@ const ScrollToTop = () => {
         />
       </div>
 
-      {/* Mobile List */}
-      <div className="lg:hidden space-y-4">
-        {currentStudents.map((student, index) => (
-          <div 
-            key={index}
-            className="bg-white p-4 rounded-lg shadow"
-            onClick={() => {
-              setSelectedStudent(student);
-              setIsModalOpen(true);
-            }}
-          >
-            <div className="space-y-2">
-              <div className="text-sm font-medium text-gray-900">
-                {formatName(student["Full Name"])}
-              </div>
+        {/* Mobile List */}
+        <div className="lg:hidden space-y-4">
+          {currentStudents.map((student, index) => (
+            <div 
+              key={index}
+              className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow"
+              onClick={() => {
+                setSelectedStudent(student);
+                setIsModalOpen(true);
+              }}
+            >
+              <div className="space-y-2">
+                <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                  {formatName(student["Full Name"])}
+                </div>
               <div className="space-y-2">
                 <ContactItem 
                   type="phone"
@@ -385,28 +386,26 @@ const ScrollToTop = () => {
 
       {/* Modal with Details */}
       {isModalOpen && selectedStudent && (
-        <div className="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-          <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-            <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-            
-            <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
-              <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <div className="flex justify-between items-start mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900">{selectedStudent["Full Name"]}</h2>
-                  <button 
-                    onClick={() => setIsModalOpen(false)}
-                    className="text-gray-600 hover:text-gray-700"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
-                </div>
+          <div className="fixed inset-0 z-50 overflow-y-auto">
+            <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+              <div className="fixed inset-0 bg-gray-500 dark:bg-gray-900 bg-opacity-75 dark:bg-opacity-75 transition-opacity"></div>
+              <div className="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
+                <div className="bg-white dark:bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                  <div className="flex justify-between items-start mb-6">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{selectedStudent["Full Name"]}</h2>
+                    <button 
+                      onClick={() => setIsModalOpen(false)}
+                      className="text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                    >
+                      <X className="h-5 w-5" />
+                    </button>
+                  </div>
 
-                <div className="space-y-8">
-                  {/* Contact Information */}
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <SectionTitle>Contact Information</SectionTitle>
-                    <div className="space-y-3">
+                  <div className="space-y-8">
+                    {/* Contact Information */}
+                    <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                      <SectionTitle>Contact Information</SectionTitle>
+                      <div className="space-y-3">
                       <ContactItem 
                         type="phone"
                         value={selectedStudent["Telephone contact"]}
@@ -425,19 +424,19 @@ const ScrollToTop = () => {
                     </div>
                   </div>
 
-                  {/* Progress Section */}
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <SectionTitle>Course Progress</SectionTitle>
-                    <div className="mb-4">
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-gray-600">Overall Progress</span>
-                        <span className="text-gray-600">{getProgressPercentage(selectedStudent.courseProgress)}%</span>
-                      </div>
-                      <div className="h-2 bg-gray-200 rounded-full">
-                        <div 
-                          className="h-full rounded-full bg-blue-600"
-                          style={{ width: `${getProgressPercentage(selectedStudent.courseProgress)}%` }}
-                        />
+                    {/* Progress Section */}
+                    <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                      <SectionTitle>Course Progress</SectionTitle>
+                      <div className="mb-4">
+                        <div className="flex justify-between text-sm mb-1">
+                          <span className="text-gray-600 dark:text-gray-300">Overall Progress</span>
+                          <span className="text-gray-600 dark:text-gray-300">{getProgressPercentage(selectedStudent.courseProgress)}%</span>
+                        </div>
+                        <div className="h-2 bg-gray-200 dark:bg-gray-600 rounded-full">
+                          <div 
+                            className="h-full rounded-full bg-blue-600 dark:bg-blue-500"
+                            style={{ width: `${getProgressPercentage(selectedStudent.courseProgress)}%` }}
+                          />
                       </div>
                     </div>
                     <div className="space-y-2">
