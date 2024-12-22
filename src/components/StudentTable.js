@@ -76,124 +76,123 @@ const ScrollToTop = () => {
     };
   
     return (
-        <div className="bg-white border rounded-lg shadow-sm mt-4 mb-8">
-          <div className="p-3 sm:p-4">
-            {/* Mobile Layout */}
-            <div className="flex flex-col space-y-3">
-              {/* Navigation Buttons - Mobile */}
-              <div className="flex justify-between sm:hidden w-full">
+      <div className="bg-white border rounded-lg shadow-sm mt-4 mb-8">
+        <div className="p-3 sm:p-4">
+          {/* Mobile Layout */}
+          <div className="flex flex-col space-y-3">
+            {/* Navigation Buttons - Mobile */}
+            <div className="flex justify-between sm:hidden w-full">
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="inline-flex items-center px-3 py-1.5 text-sm bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                <ChevronLeft className="h-4 w-4 mr-1" />
+                <span>Previous</span>
+              </button>
+              
+              <span className="text-sm text-black font-medium self-center">
+                Page {currentPage} of {totalPages}
+              </span>
+              
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="inline-flex items-center px-3 py-1.5 text-sm bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                <span>Next</span>
+                <ChevronRight className="h-4 w-4 ml-1" />
+              </button>
+            </div>
+  
+            {/* Jump to Page - Mobile */}
+            <div className="sm:hidden">
+              <form onSubmit={handlePageSubmit} className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <label htmlFor="jump-to-page-mobile" className="text-sm text-black font-medium whitespace-nowrap">
+                    Jump to page:
+                  </label>
+                  <input
+                    id="jump-to-page-mobile"
+                    type="number"
+                    min="1"
+                    max={totalPages}
+                    value={jumpToPage}
+                    onChange={(e) => setJumpToPage(e.target.value)}
+                    className="w-16 px-2 py-1 text-sm border border-gray-600 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="px-3 py-1.5 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors flex items-center space-x-1"
+                >
+                  <span>Jump</span>
+                </button>
+              </form>
+            </div>
+  
+            {/* Desktop Layout */}
+            <div className="hidden sm:flex sm:flex-row justify-between items-center">
+              <div className="flex items-center space-x-2">
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="inline-flex items-center px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="inline-flex items-center px-4 py-2 text-sm bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <ChevronLeft className="h-4 w-4 mr-1" />
-                  <span>Previous</span>
+                  <span>Previous Page</span>
                 </button>
-                
-                <span className="text-sm text-gray-800 font-medium self-center">
-                  Page {currentPage} of {totalPages}
-                </span>
                 
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="inline-flex items-center px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="inline-flex items-center px-4 py-2 text-sm bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                  <span>Next</span>
+                  <span>Next Page</span>
                   <ChevronRight className="h-4 w-4 ml-1" />
                 </button>
               </div>
-    
-              {/* Jump to Page - Mobile */}
-              <div className="sm:hidden">
-                <form onSubmit={handlePageSubmit} className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <label htmlFor="jump-to-page-mobile" className="text-sm text-gray-800 font-medium whitespace-nowrap">
-                      Go to page:
-                    </label>
-                    <input
-                      id="jump-to-page-mobile"
-                      type="number"
-                      min="1"
-                      max={totalPages}
-                      value={jumpToPage}
-                      onChange={(e) => setJumpToPage(e.target.value)}
-                      className="w-16 px-2 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    />
-                  </div>
+  
+              <div className="flex items-center space-x-4">
+                <div className="text-sm text-black font-medium">
+                  Page {currentPage} of {totalPages}
+                </div>
+                <form onSubmit={handlePageSubmit} className="flex items-center space-x-2">
+                  <label htmlFor="jump-to-page-desktop" className="text-sm text-black font-medium whitespace-nowrap">
+                    Go to page:
+                  </label>
+                  <input
+                    id="jump-to-page-desktop"
+                    type="number"
+                    min="1"
+                    max={totalPages}
+                    value={jumpToPage}
+                    onChange={(e) => setJumpToPage(e.target.value)}
+                    className="w-16 px-2 py-1 text-sm border border-gray-600 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  />
                   <button
                     type="submit"
-                    className="px-3 py-1.5 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors flex items-center space-x-1"
+                    className="px-3 py-1 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors flex items-center space-x-1"
                   >
                     <span>Jump</span>
                     <ArrowUp className="h-3 w-3" />
                   </button>
                 </form>
               </div>
-    
-              {/* Desktop Layout */}
-              <div className="hidden sm:flex sm:flex-row justify-between items-center">
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                    className="inline-flex items-center px-4 py-2 text-sm bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                  >
-                    <ChevronLeft className="h-4 w-4 mr-1" />
-                    <span>Previous Page</span>
-                  </button>
-                  
-                  <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                    className="inline-flex items-center px-4 py-2 text-sm bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                  >
-                    <span>Next Page</span>
-                    <ChevronRight className="h-4 w-4 ml-1" />
-                  </button>
-                </div>
-    
-                <div className="flex items-center space-x-4">
-                  <div className="text-sm text-gray-800 font-medium">
-                    Page {currentPage} of {totalPages}
-                  </div>
-                  <form onSubmit={handlePageSubmit} className="flex items-center space-x-2">
-                    <label htmlFor="jump-to-page-desktop" className="text-sm text-gray-800 font-medium whitespace-nowrap">
-                      Go to page:
-                    </label>
-                    <input
-                      id="jump-to-page-desktop"
-                      type="number"
-                      min="1"
-                      max={totalPages}
-                      value={jumpToPage}
-                      onChange={(e) => setJumpToPage(e.target.value)}
-                      className="w-16 px-2 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    />
-                    <button
-                      type="submit"
-                      className="px-3 py-1 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors flex items-center space-x-1"
-                    >
-                      <span>Jump</span>
-                      <ArrowUp className="h-3 w-3" />
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-    
-            {/* Progress Bar */}
-            <div className="w-full bg-gray-200 rounded-full h-1.5 mt-3">
-              <div 
-                className="bg-blue-600 h-1.5 rounded-full transition-all duration-300"
-                style={{ width: `${(currentPage / totalPages) * 100}%` }}
-              />
             </div>
           </div>
+  
+          {/* Progress Bar */}
+          <div className="w-full bg-gray-200 rounded-full h-1.5 mt-3">
+            <div 
+              className="bg-blue-600 h-1.5 rounded-full transition-all duration-300"
+              style={{ width: `${(currentPage / totalPages) * 100}%` }}
+            />
+          </div>
         </div>
-      );
-    };
+      </div>
+    );
+  };
 
     const StudentTable = ({ students }) => {
         const [selectedStudent, setSelectedStudent] = useState(null);
