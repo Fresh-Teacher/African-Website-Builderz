@@ -110,7 +110,7 @@ const ScrollToTop = () => {
               <form onSubmit={handlePageSubmit} className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <label htmlFor="jump-to-page-mobile" className="text-sm text-gray-900 font-semibold whitespace-nowrap">
-                    Jump to page:
+                    Go to page:
                   </label>
                   <input
                     id="jump-to-page-mobile"
@@ -119,7 +119,7 @@ const ScrollToTop = () => {
                     max={totalPages}
                     value={jumpToPage}
                     onChange={(e) => setJumpToPage(e.target.value)}
-                    className="w-16 px-2 py-1 text-sm border border-gray-600 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-16 px-2 py-1 text-sm text-gray-900 border border-gray-600 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
                 </div>
                 <button
@@ -127,6 +127,7 @@ const ScrollToTop = () => {
                   className="px-3 py-1.5 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors flex items-center space-x-1"
                 >
                   <span>Jump</span>
+                  <ArrowUp className="h-3 w-3" />
                 </button>
               </form>
             </div>
@@ -168,7 +169,7 @@ const ScrollToTop = () => {
                     max={totalPages}
                     value={jumpToPage}
                     onChange={(e) => setJumpToPage(e.target.value)}
-                    className="w-16 px-2 py-1 text-sm border border-gray-600 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-16 px-2 py-1 text-sm text-gray-900 border border-gray-600 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
                   <button
                     type="submit"
