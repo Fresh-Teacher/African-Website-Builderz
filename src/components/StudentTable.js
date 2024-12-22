@@ -61,7 +61,7 @@ const ScrollToTop = () => {
       if (pageNumber >= 1 && pageNumber <= totalPages) {
         window.scrollTo({
           top: 0,
-          behavior: 'smooth'
+          behavior: 'smooth',
         });
         onPageChange(pageNumber);
       }
@@ -70,7 +70,7 @@ const ScrollToTop = () => {
     const handlePageChange = (newPage) => {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
       onPageChange(newPage);
     };
@@ -85,20 +85,20 @@ const ScrollToTop = () => {
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="inline-flex items-center px-3 py-1.5 text-sm bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="inline-flex items-center px-3 py-1.5 text-sm text-gray-900 bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 <ChevronLeft className="h-4 w-4 mr-1" />
                 <span>Previous</span>
               </button>
-              
-              <span className="text-sm text-black font-medium self-center">
+  
+              <span className="text-base text-gray-800 font-semibold self-center">
                 Page {currentPage} of {totalPages}
               </span>
-              
+  
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="inline-flex items-center px-3 py-1.5 text-sm bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="inline-flex items-center px-3 py-1.5 text-sm text-gray-900 bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 <span>Next</span>
                 <ChevronRight className="h-4 w-4 ml-1" />
@@ -109,7 +109,7 @@ const ScrollToTop = () => {
             <div className="sm:hidden">
               <form onSubmit={handlePageSubmit} className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <label htmlFor="jump-to-page-mobile" className="text-sm text-black font-medium whitespace-nowrap">
+                  <label htmlFor="jump-to-page-mobile" className="text-sm text-gray-900 font-semibold whitespace-nowrap">
                     Jump to page:
                   </label>
                   <input
@@ -137,16 +137,16 @@ const ScrollToTop = () => {
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="inline-flex items-center px-4 py-2 text-sm bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="inline-flex items-center px-4 py-2 text-sm text-gray-900 bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <ChevronLeft className="h-4 w-4 mr-1" />
                   <span>Previous Page</span>
                 </button>
-                
+  
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="inline-flex items-center px-4 py-2 text-sm bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="inline-flex items-center px-4 py-2 text-sm text-gray-900 bg-white border border-gray-600 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <span>Next Page</span>
                   <ChevronRight className="h-4 w-4 ml-1" />
@@ -154,11 +154,11 @@ const ScrollToTop = () => {
               </div>
   
               <div className="flex items-center space-x-4">
-                <div className="text-sm text-black font-medium">
+                <div className="text-base text-gray-800 font-semibold">
                   Page {currentPage} of {totalPages}
                 </div>
                 <form onSubmit={handlePageSubmit} className="flex items-center space-x-2">
-                  <label htmlFor="jump-to-page-desktop" className="text-sm text-black font-medium whitespace-nowrap">
+                  <label htmlFor="jump-to-page-desktop" className="text-sm text-gray-900 font-semibold whitespace-nowrap">
                     Go to page:
                   </label>
                   <input
@@ -183,9 +183,9 @@ const ScrollToTop = () => {
           </div>
   
           {/* Progress Bar */}
-          <div className="w-full bg-gray-200 rounded-full h-1.5 mt-3">
-            <div 
-              className="bg-blue-600 h-1.5 rounded-full transition-all duration-300"
+          <div className="w-full bg-gray-300 rounded-full h-1.5 mt-3">
+            <div
+              className="bg-blue-700 h-1.5 rounded-full transition-all duration-300"
               style={{ width: `${(currentPage / totalPages) * 100}%` }}
             />
           </div>
